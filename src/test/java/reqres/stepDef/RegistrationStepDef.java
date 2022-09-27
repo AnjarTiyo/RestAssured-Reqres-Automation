@@ -6,28 +6,23 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
-import reqres.responses.RegistrationResponses;
-import reqres.step.RegistrationAPI;
-
-import java.io.File;
-
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.notNullValue;
+import reqres.step.ReqresAPI;
 
 public class RegistrationStepDef {
     //Bismillah
     @Steps
-    RegistrationAPI reg;
-    RegistrationResponses regResp;
+    ReqresAPI req;
 
-    @Given("Post register valid new user with email {string}, password {string}, note: {string}")
+    private static final String resources = "register";
+
+    @Given("I post register valid new user with email {string}, password {string}, note: {string}")
     public void postRegisterNewUserWithJsonFile(String email, String password, String note){
-        reg.postRegisterUser(email, password);
+        req.postUser(email, password);
     }
 
     @When("Send request post create user")
     public void sendRequestPostCreateUser() {
-        SerenityRest.when().post(reg.URL+reg.resource);
+        SerenityRest.when().post(req.URL+ resources);
     }
 
     @Then("Status code should be {string} - {string}")
@@ -39,6 +34,7 @@ public class RegistrationStepDef {
 
     @And("Response body should contain {string}")
     public void responseBodyShouldContainAnd(String response) {
-        reg.validateResponse(response);
+
+        req.validateResponse(response);
     }
 }

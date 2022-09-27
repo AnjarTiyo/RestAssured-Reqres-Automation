@@ -1,4 +1,4 @@
-package starter;
+package reqres;
 
 
 import io.cucumber.junit.CucumberOptions;

@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.20/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.20/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.20/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.20/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.20/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            var scenarioTable = $('.scenario-result-table').DataTable({
+
+                "order": [],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"resources-user","type":"feature","href":"580f50c42ae7979850f4096848f12e3ff1ba8d1319bfcd2a72689361019d26be.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027fa fa-times-circle failure-icon \u0027 title\u003d\u0027FAILURE\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e6 scenarios\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                showTags: true,
+                expandIcon: "glyphicon glyphicon-folder-close",
+                collapseIcon: "glyphicon glyphicon-folder-open",
+                emptyIcon: "glyphicon glyphicon-book"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity and Cucumber Quick Start</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+
+
+                    > <span class="truncate-40">Resources-User</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 28-09-2022 13:06</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                        <span>
+                                            <h2><i class="fa fa-book"></i> Feature:  Resources-User</h2>
+                                        </span>
+                                    </div>
+                                        <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="d8571d89a0d5a915e3a7df06cf64fe744401190e08088c40d8e7a33e1ef96e46.html">Delete
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                                <p class="tag">
+                                                    <span class="badge tag-badge" style="background:default;">
+                                                        <i class="fa fa-tag"></i>&nbsp;<a class="tagLink"
+                                                                                          style="background:default;"
+                                                                                          href="e4e947acff7b0f746d9d0244017973967e4a45ad91b36164f616b41a5e94fdf9.html">Users
+                                                        (tag)</a>
+                                                    </span>
+                                                </p>
+                                        </span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="fas fa-comments"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="fas fa-tachometer-alt"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+
+                                                    <!--- TOC --->
+                                                    <div id="toc">
+                                                        <h3>Overview</h3>
+                                                        <table class="table" id="toc-table">
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#c71ff9e58a58205ab5f406ab83a12cf3d57f02d2e6bf68f37b70b360ef6fd4eb" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario: Get list of all USERS
+                                                                                    </a>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="6848b302e732c2b5f629def681cdf904b2f292eeea1bfbdd2efcfcfc7f0f39b4.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="6848b302e732c2b5f629def681cdf904b2f292eeea1bfbdd2efcfcfc7f0f39b4.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#4264a36f17d98fc8e04c239bc67153d3dad4b47deb4796254019f9391915a3f9" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario Outline: Get list of USERS within page
+                                                                                    </a>
+                                                                                        (5 examples)
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#999f2f69cf9b6d5a188542db1b11a25b3c0d9bc7e3abd15efc552733b953ceff" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario Outline: Get single user data with id
+                                                                                    </a>
+                                                                                        (3 examples)
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#f132fd5f6101f758cdd9c7da7f99a1d2b027c62d929c08fe0a42585839ce57b9" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario Outline: Post new USERS
+                                                                                    </a>
+                                                                                        (4 examples)
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#825ee16af6d1b43903d2451a125591a35d641e537caf0a7e37a14c07dd9c54c3" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario Outline: Put update USERS attributes
+                                                                                    </a>
+                                                                                        (4 examples)
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="width:95%;" class="toc-title">
+                                                                                <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#1bd1524dd320a47f1f82ddfc03980f4ad116b1a57e15be2c1ac220f00fdadc42" title="View scenario details">
+                                                                                        <i class="far fa-comment-dots"></i> Scenario Outline: Delete existing USERS
+                                                                                    </a>
+                                                                                        (4 examples)
+                                                                                </span>
+                                                                            </td>
+                                                                            <td style="width:5%;">
+                                                                                <table>
+                                                                                    <tr>
+                                                                                        <td>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html"
+                                                                                               title="View test results">
+                                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                                                                </a>
+
+
+                                                                                        </td>
+                                                                                            <td>
+                                                                                                <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                                   href="c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html"
+                                                                                                   title="View test results">
+                                                                                                    <i class="fas fa-search-plus"></i>
+                                                                                                </a>
+                                                                                            </td>
+                                                                                    </tr>
+                                                                                </table>
+                                                                            </td>
+                                                                        </tr>
+                                                        </table>
+                                                    </div>
+                                                    <!--- END OF TOC --->
+
+                                                    <h3>Scenarios</h3>
+
+                                                        <a name="69b906c7-e2d2-4fb8-b4b8-2d562d42204e" ></a>
+
+
+                                                            <div class="scenario-docs card" id="c71ff9e58a58205ab5f406ab83a12cf3d57f02d2e6bf68f37b70b360ef6fd4eb">
+                                                                <div class="scenario-docs card-header success"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="6848b302e732c2b5f629def681cdf904b2f292eeea1bfbdd2efcfcfc7f0f39b4.html"
+                                                                   title="View test results">Scenario: Get list of all USERS</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Get list of all users</p>
+                                                                        <p>When Send request get all users</p>
+                                                                        <p>Then Status code should be &quot;200&quot; - &quot;OK&quot;</p>
+                                                                        <p>And Response body &quot;page&quot; should return &quot;1&quot;</p>
+                                                                    <div class="examples">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="4264a36f17d98fc8e04c239bc67153d3dad4b47deb4796254019f9391915a3f9">
+                                                                <div class="scenario-docs card-header failure"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html"
+                                                                   title="View test results">Scenario Outline: Get list of USERS within page</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Get USERS within page &quot;{page}&quot;</p>
+                                                                        <p>When Send request get list users within page &quot;{page}&quot;</p>
+                                                                        <p>Then Status code should be &quot;{status}&quot; - &quot;{detail}&quot;</p>
+                                                                        <p>And Response body &quot;{body_resp}&quot; should return &quot;{response}&quot;</p>
+                                                                    <div class="examples">
+                                                                            <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>page</th><th>status</th><th>detail</th><th>body_resp</th><th>response</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>200</td><td>OK</td><td>page</td><td>1</td><td><a href='bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>2</td><td>200</td><td>OK</td><td>page</td><td>2</td><td><a href='bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>3</td><td>204</td><td>No Content</td><td>page</td><td>Null</td><td><a href='bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+<tr><td>a</td><td>204</td><td>No Content</td><td>page</td><td>Null</td><td><a href='bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+<tr><td></td><td>200</td><td>OK</td><td>page</td><td>1</td><td><a href='bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="999f2f69cf9b6d5a188542db1b11a25b3c0d9bc7e3abd15efc552733b953ceff">
+                                                                <div class="scenario-docs card-header success"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html"
+                                                                   title="View test results">Scenario Outline: Get single user data with id</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Get USERS data with id &quot;{id}&quot;</p>
+                                                                        <p>When Send request get users data with id &quot;{id}&quot;</p>
+                                                                        <p>Then Status code should be &quot;{status}&quot; - &quot;{detail}&quot;</p>
+                                                                        <p>And Response body &quot;{body_resp}&quot; should return &quot;{response}&quot;</p>
+                                                                    <div class="examples">
+                                                                            <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>id</th><th>status</th><th>detail</th><th>body_resp</th><th>response</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>200</td><td>OK</td><td>id</td><td>1</td><td><a href='aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>20</td><td>404</td><td>Not Found</td><td>data</td><td>null</td><td><a href='aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>aa</td><td>404</td><td>Not Found</td><td>data</td><td>null</td><td><a href='aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="f132fd5f6101f758cdd9c7da7f99a1d2b027c62d929c08fe0a42585839ce57b9">
+                                                                <div class="scenario-docs card-header failure"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html"
+                                                                   title="View test results">Scenario Outline: Post new USERS</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Post new USERS with name &quot;{name}&quot; and job &quot;{job}&quot;</p>
+                                                                        <p>When Send request post create user</p>
+                                                                        <p>Then Status code should be &quot;{status}&quot; - &quot;{detail}&quot;</p>
+                                                                        <p>And Response body &quot;name&quot; should return &quot;{name}&quot;</p>
+                                                                        <p>And Response body &quot;job&quot; should return &quot;{job}&quot;</p>
+                                                                        <p>And Response body &quot;id&quot; should return &quot;{response_id}&quot;</p>
+                                                                        <p>And Response body &quot;createdAt&quot; should return &quot;{response_created}&quot;</p>
+                                                                    <div class="examples">
+                                                                            <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>name</th><th>job</th><th>status</th><th>detail</th><th>response_id</th><th>response_created</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>Anjar</td><td>QA Engineer</td><td>201</td><td>Created</td><td>notNull</td><td>notNull</td><td><a href='3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td></td><td>QA Engineer</td><td>201</td><td>Created</td><td>notNull</td><td>notNull</td><td><a href='3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>Anjar</td><td>QA Engineer</td><td>201</td><td>Created</td><td>notNull</td><td>notNull</td><td><a href='3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td></td><td></td><td>400</td><td>Bad Request</td><td>null</td><td>null</td><td><a href='3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="825ee16af6d1b43903d2451a125591a35d641e537caf0a7e37a14c07dd9c54c3">
+                                                                <div class="scenario-docs card-header failure"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html"
+                                                                   title="View test results">Scenario Outline: Put update USERS attributes</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Put update USERS attributes id &quot;{id}&quot; with name &quot;{name}&quot; and job &quot;{job}&quot;</p>
+                                                                        <p>When Send request put update USERS attributes</p>
+                                                                        <p>Then Status code should be &quot;{status}&quot; - &quot;{detail}&quot;</p>
+                                                                        <p>And Response body &quot;name&quot; should return &quot;{name}&quot;</p>
+                                                                        <p>And Response body &quot;job&quot; should return &quot;{job}&quot;</p>
+                                                                        <p>And Response body &quot;updatedAt&quot; should return &quot;{response}&quot;</p>
+                                                                    <div class="examples">
+                                                                            <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>id</th><th>name</th><th>job</th><th>status</th><th>detail</th><th>response</th><th>notes</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>2</td><td>Anjar Tiyo</td><td>QA Update</td><td>200</td><td>OK</td><td>notNull</td><td>valid request</td><td><a href='d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>2</td><td></td><td></td><td>400</td><td>Bad Request</td><td>null</td><td>no data</td><td><a href='d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+<tr><td>1024</td><td>Anjar Tiyo</td><td>QA Update</td><td>400</td><td>Bad Request</td><td>null</td><td>id doesnt exist</td><td><a href='d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+<tr><td>aa</td><td>Anjar Tiyo</td><td>QA Update</td><td>400</td><td>Bad Request</td><td>null</td><td>invalid id</td><td><a href='d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="scenario-docs card" id="1bd1524dd320a47f1f82ddfc03980f4ad116b1a57e15be2c1ac220f00fdadc42">
+                                                                <div class="scenario-docs card-header failure"
+                                                                     style="min-height:1.5em;">
+                                                                    <div>
+                                                            <span class="scenario-heading">
+                                                                <a href="c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html"
+                                                                   title="View test results">Scenario Outline: Delete existing USERS</a>
+                                                            </span>
+                                                                        <span class="scenario-result-icon">
+                                                                
+
+                                                                                <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a>
+                                                            </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scenario-docs card-body">
+                                                                        <p>Given Delete existing users with id &quot;{id}&quot;</p>
+                                                                        <p>When Send request delete existing users</p>
+                                                                        <p>Then Status code should be &quot;{status}&quot; - &quot;{detail}&quot;</p>
+                                                                        <p>And Response body should return &quot;{response}&quot;</p>
+                                                                    <div class="examples">
+                                                                            <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>id</th><th>status</th><th>detail</th><th>response</th><th>note</th><th></th></tr>
+</thead>
+<tbody>
+<tr><td>2</td><td>204</td><td>No Content</td><td>null</td><td>valid existing id</td><td><a href='c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html#beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a></td></tr>
+<tr><td>1024</td><td>400</td><td>Bad Request</td><td>blocked</td><td>not existing id</td><td><a href='c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+<tr><td>aa</td><td>400</td><td>Bad Request</td><td>blocked</td><td>invalid id format</td><td><a href='c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+<tr><td></td><td>400</td><td>Bad Request</td><td>blocked</td><td>no parameter</td><td><a href='c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html#beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a></td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+
+                                                <div style="width:300px;" class="chart-container automated-and-manual-results">
+                                                    <div class="ct-chart ct-square"></div>
+                                                </div>
+                                                <script>
+
+                                                    var labels = ['57%', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '43%', ' ', ' ', ' ', ' ', ' '];
+                                                    // Our series array that contains series objects or in this case series data arrays
+
+                                                    var series = [{meta: 'Passing tests (automated)', value: 12}, {meta: 'Passing tests (manual)', value: 0}, {meta: 'Pending tests (automated)', value: 0}, {meta: 'Pending tests (manual)', value: 0}, {meta: 'Ignored tests (automated)', value: 0}, {meta: 'Ignored tests (manual)', value: 0}, {meta: 'Skipped tests (automated)', value: 0}, {meta: 'Skipped tests (manual)', value: 0}, {meta: 'Failing tests (automated)', value: 9}, {meta: 'Failing tests (manual)', value: 0}, {meta: 'Broken tests (automated)', value: 0}, {meta: 'Broken tests (manual)', value: 0}, {meta: 'Compromised tests (automated)', value: 0}, {meta: 'Compromised tests (manual)', value: 0}];
+
+                                                    // As options we currently only set a static size of 300x200 px. We can also omit this and use aspect ratio containers
+                                                    // as you saw in the previous example
+                                                    var options = {
+                                                        width: 350,
+                                                        height: 300
+                                                    };
+
+                                                    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+                                                        new Chartist.Pie('.ct-chart', {
+                                                            series: series,
+                                                            labels: labels,
+                                                        }, {
+                                                            donut: true,
+                                                            donutWidth: 60,
+                                                            donutSolid: true,
+                                                            startAngle: 270,
+                                                            showLabel: true
+                                                        }, options);
+                                                    });
+
+                                                </script>
+                                            </div>
+                                            <div class="col-sm-8">
+
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th scope="col">Scenario Results (including rows of test
+                                                                data)
+                                                            </th>
+                                                            <th scope="col" colspan="2" class="automated-stats">
+                                                                Automated
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                                <td class="aggregate-result-count">
+                                                                    <a href="2f65e6bcd37cbafef792e4b563ea257e60b54d8357abaeeae1a823dbaca83398.html"><i
+                                                                                class='fa fa-check-circle-o success-icon'></i>&nbsp;Passing</a>
+                                                                </td>
+                                                            <td class="automated-stats">12</td>
+                                                            <td class="automated-stats">57%</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='fa fa-stop-circle-o pending-icon'></i>&nbsp;Pending
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='fa fa-ban ignored-icon'></i>&nbsp;Ignored
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td class="aggregate-result-count"><i
+                                                                            class='fa fa-fast-forward skip-icon'></i>&nbsp;Skipped
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr>
+                                                                    <td colspan="3"><a href="6fbfebf698f39df3be340aa96bd22709aabc56c83460bb39b2d959b5b643097a.html"><i
+                                                                                    class='fa fa-times failure-icon'></i>&nbsp;<em>Unsuccessful</em></a>
+                                                                    </td>
+
+                                                        </tr>
+
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <a href="e85684ddca4cc2f07fc7573807f91db7932de316a99707a590e3f00781d5e7ed.html"><i
+                                                                                class='fa fa-times-circle failure-icon'></i>&nbsp;Failed</a>
+                                                                </td>
+                                                            <td class="automated-stats">9</td>
+                                                            <td class="automated-stats">43%</td>
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-exclamation-triangle error-icon'></i>&nbsp;Broken
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        <tr>
+                                                                <td class="aggregate-result-count indented-error-category">
+                                                                    <i
+                                                                            class='fa fa-chain-broken compromised-icon'></i>&nbsp;Compromised
+                                                                </td>
+                                                            <td class="automated-stats">0</td>
+                                                            <td class="automated-stats"> </td>
+                                                        </tr>
+                                                        <tr class="summary-stats">
+                                                            <td class="aggregate-result-count">Total</td>
+                                                            <td class="automated-stats">21</td>
+                                                            <td class="automated-stats"></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table class="table">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>Execution Time</th>
+                                                            <th>Clock Time</th>
+                                                            <th>Fastest Test</th>
+                                                            <th>Slowest Test</th>
+                                                            <th>Average Execution Time</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr>
+                                                            <td>14s</td>
+                                                            <td>10s</td>
+                                                            <td>260ms</td>
+                                                            <td>988ms</td>
+                                                            <td>2s</td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3><i class="fas fa-cogs"></i> Automated Tests</h3>
+
+                                                        <table class="scenario-result-table table"
+                                                               id="scenario-results">
+                                                            <thead>
+                                                            <tr>
+                                                                <th class="test-name-column">Scenario</th>
+                                                                <th>Steps</th>
+                                                                <th>Started</th>
+                                                                <th>Duration</th>
+                                                                <th>Result</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="6848b302e732c2b5f629def681cdf904b2f292eeea1bfbdd2efcfcfc7f0f39b4.html">Get list of all USERS</a>
+                                                                    </td>
+                                                                    <td>4</td>
+                                                                    <td>13:06:12</td>
+                                                                    <td>372ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="bdc07b577da2f80a41ae629f68812c891ceab37ab3af810cb98a3485d40765a9.html">Get list of USERS within page</a>
+                                                                            (5 examples)
+                                                                    </td>
+                                                                    <td>4</td>
+                                                                    <td>13:06:13</td>
+                                                                    <td>1s 529ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                                style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="aa64d03f5bacc6a18b04be728f2cf66103ac2fb0474d918835ba530bf029598b.html">Get single user data with id</a>
+                                                                            (3 examples)
+                                                                    </td>
+                                                                    <td>4</td>
+                                                                    <td>13:06:14</td>
+                                                                    <td>1s 488ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-check-circle-o success-icon ' title='SUCCESS'></i></a> <span
+                                                                                style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="3e5d77345e748a4fcb643c488e75a5e53fa3b6c0d853c23a759904fde730591b.html">Post new USERS</a>
+                                                                            (4 examples)
+                                                                    </td>
+                                                                    <td>7</td>
+                                                                    <td>13:06:16</td>
+                                                                    <td>3s 748ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                                style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="d8e5705118837d79431848ff53cfb32debbc67d1b1ca5087b2b8a5d96a6e4cf2.html">Put update USERS attributes</a>
+                                                                            (4 examples)
+                                                                    </td>
+                                                                    <td>6</td>
+                                                                    <td>13:06:20</td>
+                                                                    <td>3s 661ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                                style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="c6946524896dd80db3567ad11861f78ca08bde349adb75c3174ccae9166cc664.html">Delete existing USERS</a>
+                                                                            (4 examples)
+                                                                    </td>
+                                                                    <td>4</td>
+                                                                    <td>13:06:23</td>
+                                                                    <td>3s 467ms</td>
+                                                                    <td>
+                                                                            <a href='##beforetable'><i class='fa fa-times-circle failure-icon ' title='FAILURE'></i></a> <span
+                                                                                style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h3><i class="fas fa-edit"></i> Manual Tests</h3>
+
+                                                        No manual tests were recorded
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span class="version">Serenity BDD version 2.4.51</span>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

@@ -20,8 +20,8 @@ public class RegistrationStepDef {
         req.postUser(email, password);
     }
 
-    @When("Send request post create user")
-    public void sendRequestPostCreateUser() {
+    @When("Send request post register new user")
+    public void sendRequestPostRegisterUser() {
         SerenityRest.when().post(req.URL+ resources);
     }
 
@@ -32,9 +32,4 @@ public class RegistrationStepDef {
         SerenityRest.then().statusCode(t);
     }
 
-    @And("Response body should contain {string}")
-    public void responseBodyShouldContainAnd(String response) {
-
-        req.validateResponse(response);
-    }
 }

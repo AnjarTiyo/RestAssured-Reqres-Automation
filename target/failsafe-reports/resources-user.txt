@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: resources-user
 -------------------------------------------------------------------------------
-Tests run: 21, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 14.958 s <<< FAILURE! - in resources-user
-resources-user.Get list of USERS within page #3  Time elapsed: 0.842 s  <<< FAILURE!
+Tests run: 21, Failures: 9, Errors: 0, Skipped: 0, Time elapsed: 14.318 s <<< FAILURE! - in resources-user
+resources-user.Get list of USERS within page #3  Time elapsed: 0.262 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <204> but was <200>.
@@ -18,8 +18,7 @@ Expected status code <204> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -44,7 +43,7 @@ Expected status code <204> but was <200>.
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
 	at ✽.Status code should be "204" - "No Content"(classpath:features/resources-user.feature:15)
 
-resources-user.Get list of USERS within page #4  Time elapsed: 0.827 s  <<< FAILURE!
+resources-user.Get list of USERS within page #4  Time elapsed: 0.285 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <204> but was <200>.
@@ -60,8 +59,7 @@ Expected status code <204> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -86,7 +84,7 @@ Expected status code <204> but was <200>.
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
 	at ✽.Status code should be "204" - "No Content"(classpath:features/resources-user.feature:15)
 
-resources-user.Post new USERS #4  Time elapsed: 0.804 s  <<< FAILURE!
+resources-user.Post new USERS #4  Time elapsed: 0.921 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <201>.
@@ -102,7 +100,7 @@ Expected status code <400> but was <201>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -114,7 +112,7 @@ Expected status code <400> but was <201>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -126,7 +124,7 @@ Expected status code <400> but was <201>.
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
 	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:41)
 
-resources-user.Put update USERS attributes #2  Time elapsed: 0.822 s  <<< FAILURE!
+resources-user.Put update USERS attributes #2  Time elapsed: 0.82 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <200>.
@@ -142,7 +140,7 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -154,7 +152,7 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -164,9 +162,9 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
-	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:56)
+	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:57)
 
-resources-user.Put update USERS attributes #3  Time elapsed: 0.74 s  <<< FAILURE!
+resources-user.Put update USERS attributes #3  Time elapsed: 0.963 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <200>.
@@ -182,7 +180,7 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -194,7 +192,7 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -204,9 +202,9 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
-	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:56)
+	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:57)
 
-resources-user.Put update USERS attributes #4  Time elapsed: 0.811 s  <<< FAILURE!
+resources-user.Put update USERS attributes #4  Time elapsed: 0.991 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <200>.
@@ -222,7 +220,7 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -234,7 +232,7 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -244,9 +242,9 @@ Expected status code <400> but was <200>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
-	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:56)
+	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:57)
 
-resources-user.Delete existing USERS #2  Time elapsed: 0.822 s  <<< FAILURE!
+resources-user.Delete existing USERS #2  Time elapsed: 0.919 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <204>.
@@ -262,7 +260,7 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -274,7 +272,7 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -284,9 +282,9 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
-	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:70)
+	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:72)
 
-resources-user.Delete existing USERS #3  Time elapsed: 0.804 s  <<< FAILURE!
+resources-user.Delete existing USERS #3  Time elapsed: 0.89 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <204>.
@@ -302,7 +300,7 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -314,7 +312,7 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -324,9 +322,9 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
-	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:70)
+	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:72)
 
-resources-user.Delete existing USERS #4  Time elapsed: 0.822 s  <<< FAILURE!
+resources-user.Delete existing USERS #4  Time elapsed: 0.783 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <400> but was <204>.
@@ -342,7 +340,7 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:493)
 	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
 	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)
-	at jdk.internal.reflect.GeneratedMethodAccessor147.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
@@ -354,7 +352,7 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)
 	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
 	at io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)
-	at jdk.internal.reflect.GeneratedMethodAccessor146.invoke(Unknown Source)
+	at jdk.internal.reflect.GeneratedMethodAccessor156.invoke(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
@@ -364,5 +362,5 @@ Expected status code <400> but was <204>.
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)
 	at io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)
 	at reqres.stepDef.RegistrationStepDef.statusCodeShouldBeOK(RegistrationStepDef.java:32)
-	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:70)
+	at ✽.Status code should be "400" - "Bad Request"(classpath:features/resources-user.feature:72)
 

@@ -1,4 +1,4 @@
-@smoke @users
+@users
 Feature: resources-user
 
   @get
@@ -50,6 +50,7 @@ Feature: resources-user
       | Anjar | QA Engineer | 201    | Created     | notNull     | notNull          |
       |       |             | 400    | Bad Request | null        | null             |
 
+  @put
   Scenario Outline: Put update USERS attributes
     Given Put update USERS attributes id "<id>" with name "<name>" and job "<job>"
     When Send request put update USERS attributes
@@ -64,6 +65,7 @@ Feature: resources-user
       | 1024 | Anjar Tiyo | QA Update | 400    | Bad Request | null     | id doesnt exist |
       | aa   | Anjar Tiyo | QA Update | 400    | Bad Request | null     | invalid id      |
 
+  @delete
   Scenario Outline: Delete existing USERS
     Given Delete existing users with id "<id>"
     When Send request delete existing users

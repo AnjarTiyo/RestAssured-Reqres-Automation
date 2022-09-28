@@ -1,4 +1,4 @@
-@smoke @authorization
+@authorization
 Feature: Authorization
 
   Scenario Outline: Login functionallity

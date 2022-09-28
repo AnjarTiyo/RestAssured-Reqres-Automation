@@ -1,4 +1,4 @@
-@smoke @regisration
+@regisration
 Feature: User regisration
 
   Scenario Outline: Successful register new User(s)

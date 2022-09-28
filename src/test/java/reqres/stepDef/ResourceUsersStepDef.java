@@ -84,5 +84,6 @@ public class ResourceUsersStepDef {
 
     @And("Response body {string} should return {string}")
     public void responseBodyShouldReturn(String body_resp, String response) {
+        req.validateResponse(body_resp, response);
     }
 }

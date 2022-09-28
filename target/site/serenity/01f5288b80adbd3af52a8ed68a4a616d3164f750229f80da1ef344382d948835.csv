@@ -1,4 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"User regisration","Successful register new User(s)","SUCCESS","2022-09-28T13:06:08.799574+07:00[Asia/Jakarta]","0.0","4.01"
-"resources-user","Get list of all USERS","SUCCESS","2022-09-28T13:06:12.838799+07:00[Asia/Jakarta]","0.0","0.37"
-"resources-user","Get single user data with id","SUCCESS","2022-09-28T13:06:14.756999+07:00[Asia/Jakarta]","0.0","1.49"

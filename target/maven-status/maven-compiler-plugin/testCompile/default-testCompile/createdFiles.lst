@@ -1,7 +1,0 @@
-reqres/stepDef/AuthorizationStepDef.class
-reqres/stepDef/RegistrationStepDef.class
-reqres/stepDef/ResourceUsersStepDef.class
-reqres/responses/ReqresResponses.class
-reqres/step/ReqresAPI.class
-reqres/CucumberTestSuite.class
-reqres/env/TestEnv.class

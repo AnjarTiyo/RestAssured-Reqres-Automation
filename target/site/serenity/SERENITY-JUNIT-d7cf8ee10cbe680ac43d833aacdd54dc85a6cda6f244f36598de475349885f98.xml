@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Authorization" skipped="0" tests="6" time="12.28" timestamp="2022-09-28 01:05:56"><testcase name="Login functionallity"><failure message="1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Authorization" skipped="0" tests="6" time="10.98" timestamp="2022-09-28 01:59:20"><testcase name="Login functionallity"><failure message="1 expectation failed.&#10;Expected status code &lt;400&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.
 </failure><system-err>1 expectation failed.
 Expected status code &lt;400&gt; but was &lt;200&gt;.

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="9" name="resources-user" skipped="0" tests="21" time="14.27" timestamp="2022-09-28 01:06:12"><testcase name="Get list of all USERS"/><testcase name="Get list of USERS within page"><failure message="1 expectation failed.&#10;Expected status code &lt;204&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="9" name="resources-user" skipped="0" tests="21" time="15.08" timestamp="2022-09-28 01:59:35"><testcase name="Get list of all USERS"/><testcase name="Get list of USERS within page"><failure message="1 expectation failed.&#10;Expected status code &lt;204&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
 Expected status code &lt;204&gt; but was &lt;200&gt;.
 </failure><system-err>1 expectation failed.
 Expected status code &lt;204&gt; but was &lt;200&gt;.

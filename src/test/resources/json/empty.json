@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome10",
+  "definitions": {
+    "Welcome10": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Welcome10"
+    }
+  }
+}

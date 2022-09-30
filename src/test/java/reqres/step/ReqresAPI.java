@@ -1,18 +1,29 @@
 package reqres.step;
 
 import io.restassured.http.ContentType;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import reqres.env.TestEnv;
 import reqres.responses.ReqresResponses;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.HashMap;
 
 import static org.hamcrest.Matchers.*;
 
 public class ReqresAPI {
 
+    @Managed
+    WebDriver driver;
     @Steps
     static TestEnv test;
     public static final String URL = test.BASE_URL;
@@ -22,6 +33,7 @@ public class ReqresAPI {
     public static String GET_DATA_USERS_ID = URL + "users/{id}";
     public static String PUT_UPDATE_USERS = GET_DATA_USERS_ID;
     public static String DEL_USERS = GET_DATA_USERS_ID;
+    public static String JSON_FILE = "src/test/resources/json/";
     @Steps
     ReqresResponses resp;
 
@@ -86,5 +98,28 @@ public class ReqresAPI {
     @Step
     public void delUser(String id) {
         SerenityRest.given().pathParams("id", id);
+    }
+    @Step
+    public void jsonSchemaValidate(String file){
+        Path path = Paths.get(JSON_FILE+file);
+        if(Files.exists(path)){
+            File json = new File(JSON_FILE+file);
+            SerenityRest.then().assertThat()
+                    .body(JsonSchemaValidator.matchesJsonSchema(json));
+        }else{
+            //createJsonSchema(file, "post");
+            File json = new File(JSON_FILE+file);
+            SerenityRest.then().assertThat()
+                    .body(JsonSchemaValidator.matchesJsonSchema(json));
+        }
+    }
+
+    @Step
+    public void createJsonSchema(String file, String method){
+        if (method.equals("post")) {
+//            @DefaultUrl("https://jsonformatter.org/json-to-jsonschema")
+//            driver.findElement(By.id("path")).sendKeys(SerenityRest.when().post(URL+"login"));
+//            SerenityRest.when().post(URL+"login");
+        }
     }
 }

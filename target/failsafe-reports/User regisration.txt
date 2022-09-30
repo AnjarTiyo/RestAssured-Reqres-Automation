@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: User regisration
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.022 s - in User regisration
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.075 s - in User regisration

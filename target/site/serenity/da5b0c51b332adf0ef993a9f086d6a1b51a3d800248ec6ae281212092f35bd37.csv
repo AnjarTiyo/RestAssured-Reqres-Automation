@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Authorization","Login functionallity","FAILURE","2022-09-28T13:59:20.575373+07:00[Asia/Jakarta]","0.0","10.98"
-"resources-user","Get list of USERS within page","FAILURE","2022-09-28T13:59:36.082302+07:00[Asia/Jakarta]","0.0","2.19"
-"resources-user","Post new USERS","FAILURE","2022-09-28T13:59:40.76467+07:00[Asia/Jakarta]","0.0","3.28"
-"resources-user","Put update USERS attributes","FAILURE","2022-09-28T13:59:44.057004+07:00[Asia/Jakarta]","0.0","3.48"
-"resources-user","Delete existing USERS","FAILURE","2022-09-28T13:59:47.540061+07:00[Asia/Jakarta]","0.0","3.26"

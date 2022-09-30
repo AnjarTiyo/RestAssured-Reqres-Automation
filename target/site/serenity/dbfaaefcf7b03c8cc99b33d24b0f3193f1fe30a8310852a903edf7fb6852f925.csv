@@ -1,3 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"resources-user","Get list of all USERS","SUCCESS","2022-09-28T13:59:35.672342+07:00[Asia/Jakarta]","0.0","0.4"
-"resources-user","Get single user data with id","SUCCESS","2022-09-28T13:59:38.281793+07:00[Asia/Jakarta]","0.0","2.47"

@@ -1,5 +1,9 @@
 @regisration
 Feature: User regisration
+  Register new user with given json data. Method used is POST.
+
+  Note: Json data created based on parameter not File. So json body for input isn't necessary.
+  Test is validated based on status code, body responses manually and using json schema validator
 
   @tugas
   Scenario Outline: Successful register new User(s)

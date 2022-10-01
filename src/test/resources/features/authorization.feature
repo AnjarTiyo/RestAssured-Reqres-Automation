@@ -1,8 +1,12 @@
 @authorization
 Feature: Authorization
+  User login feature with email and password. API should return id and token to indicate successfull login.
+
+  Note: Json data created based on parameter not File. So json body for input isn't necessary.
+  Test is validated based on status code, body responses manually and using json schema validator
 
   @tugas
-  Scenario Outline: Login functionallity
+  Scenario Outline: Login functionality
     Given I post login with email "<username>" and password "<password>", note: "<note>"
     When Send request post login user
     Then Status code should be "<status>" - "<detail>"

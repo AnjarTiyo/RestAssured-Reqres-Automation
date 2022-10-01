@@ -1,18 +1,22 @@
 @users
 Feature: resources-user
+  CRUD users data with GET, POST, PUT and DELETE method.
+
+  Note: Json data created based on parameter not File. So json body for input isn't necessary.
+  Test is validated based on status code, body responses manually and using json schema validator
 
   @get @tugas
   Scenario: Get list of all USERS
-    Given Get list of all users
-    When Send request get all users
+    Given Get list of all "users"
+    When Send request get all "users"
     Then Status code should be "200" - "OK"
     And Response body "page" should return "1"
     And Assert that response body match json schema "getListAllUsersSchema.json"
 
   @get @tugas
   Scenario Outline: Get list of USERS within page
-    Given Get USERS within page "<page>"
-    When Send request get list users within page "<page>"
+    Given Get "users" within page "<page>"
+    When Send request get list "users" within page "<page>"
     Then Status code should be "<status>" - "<detail>"
     And Response body "<body_resp>" should return "<response>"
     And Assert that response body match json schema "<json_schema>"
@@ -26,8 +30,8 @@ Feature: resources-user
 
   @get @tugas
   Scenario Outline: Get single user data with id
-    Given Get USERS data with id "<id>"
-    When Send request get users data with id "<id>"
+    Given Get "users" data with id "<id>"
+    When Send request get "users" data with id "<id>"
     Then Status code should be "<status>" - "<detail>"
     And Response body "<body_resp>" should return "<response>"
     And Assert that response body match json schema "<json_schema>"
@@ -39,8 +43,8 @@ Feature: resources-user
 
   @post @tugas
   Scenario Outline: Post new USERS
-    Given Post new USERS with name "<name>" and job "<job>"
-    When Send request post create user
+    Given Post new "users" with name "<name>" and job "<job>"
+    When Send request post create "users"
     Then Status code should be "<status>" - "<detail>"
     And Response body "name" should return "<name>"
     And Response body "job" should return "<job>"
@@ -51,7 +55,7 @@ Feature: resources-user
       | name  | job         | status | detail      | response_id | response_created | json_schema                 |
       | Anjar | QA Engineer | 201    | Created     | notNull     | notNull          | postNewUserSchema.json      |
       |       | QA Engineer | 201    | Created     | notNull     | notNull          | postNewUserSchema.json      |
-      | Anjar | QA Engineer | 201    | Created     | notNull     | notNull          | postNewUserSchema.json      |
+      | Anjar |             | 201    | Created     | notNull     | notNull          | postNewUserSchema.json      |
       |       |             | 400    | Bad Request | null        | null             | postNewUserSchemaError.json |
 
   @put @tugas
@@ -72,8 +76,8 @@ Feature: resources-user
 
   @delete @tugas
   Scenario Outline: Delete existing USERS
-    Given Delete existing users with id "<id>"
-    When Send request delete existing users
+    Given Delete existing "users" with id "<id>"
+    When Send request delete existing "users"
     Then Status code should be "<status>" - "<detail>"
     And Response body should return "<response>"
     Examples:
